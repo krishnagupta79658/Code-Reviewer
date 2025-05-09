@@ -20,7 +20,7 @@ function App() {
 
 
 
-  api/get-review
+  
 
 
   useEffect(() => {
