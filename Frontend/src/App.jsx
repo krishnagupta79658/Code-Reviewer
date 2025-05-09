@@ -8,11 +8,20 @@ import prism from "prismjs"
 import axios from "axios"
 import './App.css'
 
+
 function App() {
   const [count, setCount] = useState(0)
   const [code, setCode] = useState(`//Enter your code here`)
   const [review, setReview] = useState(``)
   const [loading, setLoading] = useState(false) 
+
+
+
+
+
+
+  api/get-review
+
 
   useEffect(() => {
     prism.highlightAll()
@@ -21,7 +30,7 @@ function App() {
   async function reviewCode() {
     setLoading(true) 
     try {
-      const response = await axios.post("http://localhost:4000/api/get-review", { code })
+      const response = await axios.post(`${process.env.API}api/get-review`, { code })
       setReview(response.data)
     }  catch (error) { // Catch errors to prevent unhandled rejections
       console.error("Error during code review:", error);
